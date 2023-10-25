@@ -1,28 +1,74 @@
 /* Navbar.css */
 
+/* Common styles for all screen sizes */
 .navbar {
   background-color: #4f4f4f;
   color: #fff;
   padding: 10px;
   position: sticky;
   top: 0;
-  max-height: 80px;
+  max-height: 70px;
+  margin-inline: auto;
 }
 
 .container {
+  max-width: 1440px;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
 }
 
-.logo img {}
+.logo-image {
+  height: 50px;
+}
+
+.menu-button {
+  display: none; /* Display the menu button for small screens */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.menu-icon {
+  display: block;
+  width: 30px;
+  /* height: 3px; */
+  background-color: transparent;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.menu-icon.open span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 8px);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -8px);
+}
 
 .nav-links {
   list-style: none;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 10px;
 }
 
 .nav-links a {
@@ -42,4 +88,75 @@
 .nav-links a:hover,
 .nav-links a.active {
   background: #2F80ED;
+}
+
+
+/* Small screens (576px to 767px) */
+@media (max-width: 767px) {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto; /* Center the container horizontally */
+    /* padding: 0 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-button {
+    display: block; /* Display the menu button for small screens */
+  }
+
+  .nav-links {
+    display: none; /* Initially hide the menu links for small screens */
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    padding: 10px;
+    top: 70px;
+    left: 0;
+    right: 0;
+    gap: 10px;
+    background-color: #4f4f4f;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    margin-right: 0;
+  }
+
+  .nav-links li{
+    width: 100%;
+  }
+
+  .nav-links a{
+    display: block;
+    width: 90%;
+    border-radius: 5px;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:active{
+   background-color: #2F80ED;
+  }
+
+
+
+  .nav-links.open {
+    display: flex;
+    max-height: 300px; /* Adjust the max-height based on your content */
+  }
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/* Large screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  
+}
+
+/* Extra Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  
 }
