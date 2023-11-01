@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 
 
 
@@ -47,4 +52,25 @@
 
 .Container{
   max-width: 1440px;
+}
+
+
+.AppNavBar {
+  /* Define styles for your navigation bar */
+  background-color: #4f4f4f;
+  color: #fff;
+  padding: 10px;
+  position: fixed; /* Fixed position for the navigation bar */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; /* Place the navigation bar above other content */
+}
+
+
+.Hero {
+  /* Define styles for your Hero section */
+  height: calc(100vh - 70px); /* Subtract the height of the navigation bar */
+  margin-top: 70px; /* Push the Hero section down below the navigation bar */
+  /* Add other styles as needed */
 }

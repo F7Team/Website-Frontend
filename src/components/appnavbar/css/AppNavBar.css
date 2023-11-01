@@ -9,9 +9,10 @@
   top: 0;
   max-height: 70px;
   margin-inline: auto;
+  z-index: 20;
 }
 
-.container {
+.navbar .container {
   max-width: 1440px;
   margin: 0 auto; /* Center the container horizontally */
   padding: 0 20px;

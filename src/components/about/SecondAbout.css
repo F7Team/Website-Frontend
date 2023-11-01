@@ -1,0 +1,50 @@
+.second-about {
+    color: white;
+    padding: 60px 0;
+}
+
+.second-about .container {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.second-about .second-about-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #2F80ED;
+    font-family: Georgia;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.second-about .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.second-about .service-item {
+    text-align: justify;
+    color: #F4F4F4;
+    text-align: center;
+    font-family: Poppins, ;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.service-item img {
+    width: 60px;
+    /* Adjust the image size as needed */
+    /* height: 100px; */
+    object-fit: cover;
+    margin: 0 auto 10px;
+}
