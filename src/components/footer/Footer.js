@@ -17,7 +17,7 @@ const Footer = () => {
                     <div className="grid-item">
                         <h3>Contact Us</h3>
                         <p>hello@F7.com</p>
-                        <p>28, canari wharf, london. australia</p>
+                        <p>28, canari wharf, America </p>
                         <p>+1 234 567 890</p>
                     </div>
                     <div className="grid-item">
