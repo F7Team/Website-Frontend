@@ -12,13 +12,13 @@ const Footer = () => {
                 <div className="footer-grid">
                     <div className="grid-item">
                         <img src={logoImage} alt="Logo" />
-                        <p>Company Description or Logo Text</p>
+                        <p> Embark on a transformative journey with F7.</p>
                     </div>
                     <div className="grid-item">
                         <h3>Contact Us</h3>
-                        <p>Email: example@example.com</p>
-                        <p>Address: 123 Main St, City</p>
-                        <p>Phone: +1 (123) 456-7890</p>
+                        <p>hello@F7.com</p>
+                        <p>28, canari wharf, london. australia</p>
+                        <p>+1 234 567 890</p>
                     </div>
                     <div className="grid-item">
                         <h3>Social Media</h3>
@@ -30,7 +30,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="copyright">
-                    &copy; 2023 Your Company Name. All rights reserved.
+                    &copy; 2023 f7 inc. all rights reserved
                 </div>
             </div>
         </footer>
