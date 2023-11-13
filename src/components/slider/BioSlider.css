@@ -292,11 +292,11 @@
 }
 
 .bio-slider-section .swiper-button-next {
-    right: 30px;
+    right:20px;
 }
 
 .bio-slider-section .swiper-button-prev {
-    left: 30px;
+    left: 20px;
 }
 
 
@@ -322,6 +322,15 @@
 
 
 @media (max-width: 767px) {
+
+    .bio-slider-section .swiper-button-next {
+        right:0px;
+    }
+    
+    .bio-slider-section .swiper-button-prev {
+        left: 0px;
+    }
+
     .person-container .person-name {
         font-size: 18px;
     }

@@ -70,7 +70,6 @@
 
 .hero-image {
     flex: 0 0 30%;
-    /* Image occupying 30% of the width to the right */
     padding: 20px;
 }
 
@@ -143,11 +142,6 @@
         flex-direction: column;
     }
 
-    .hero-text .highlighted-text{
-        color: #F4F4F4;
-        opacity: 0.8;
-    }
-
     .hero-image{
         position: absolute;
         display: flex;
@@ -160,14 +154,13 @@
 
     
     .hero-image img{
-        height: 400px;
+        height: 300px;
+        opacity: 0.6;
     }
 
     .hero-text{
         z-index: 1;
         text-align: center;
-        background-color: #101010;
-        opacity: 0.8;
         padding-block: 10px;
     }
 }

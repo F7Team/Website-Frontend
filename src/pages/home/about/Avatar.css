@@ -39,3 +39,24 @@
 }
 
 /* Add any other styling you want for the avatar here */
+
+@media (max-width: 767px) {
+
+  .avatar-container .avatar-circle {
+    width: 150px; 
+    height: 150px; 
+  }
+
+  .avatar-container.dark-theme .avatar-circle {
+    width: 150px; 
+    height: 150px; 
+  }
+
+
+  .avatar-image {
+    width: 150px; 
+    height: 170px;
+    background: transparent;
+  }
+  
+}
