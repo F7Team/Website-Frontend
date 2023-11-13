@@ -1,0 +1,56 @@
+.large-avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    height: 340px; 
+    margin-bottom: -175px;
+  }
+  
+  .large-avatar-circle {
+    width: 300px; 
+    height: 300px; 
+    background: #101010; 
+    border-radius: 50%; 
+    position: relative;
+  }
+  
+  .large-avatar-image {
+    width: 300px; /* Set the width of the profile image */
+    height: 330px; /* Set the height of the profile image */
+    background: transparent; /* Transparent background for the image area */
+    position: absolute;
+    top: -30px;     /* bottom: 0px; */
+    left: 0px; /* Adjust the horizontal position of the image */
+  }
+  
+  .large-avatar-image img {
+    width: 100%; /* Ensure the image fills the avatar image area */
+    height: 100%; /* Ensure the image fills the avatar image area */
+    border-radius: 50%; /* Create a circular shape for the image */
+  }
+  
+  /* Add any other styling you want for the avatar here */
+  
+
+  
+@media (max-width: 767px) {
+     /* .large-avatar-container {
+        margin-bottom: 50px;
+    } */
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/* Large screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  
+}
+
+/* Extra Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  
+}

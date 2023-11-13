@@ -1,0 +1,115 @@
+.bio-about-section {
+    margin-bottom: 40px;
+}
+
+
+.bio-about-section .bio-about-content {
+    text-align: center;
+}
+
+
+.bio-about-section .profile-image {
+    margin-top: 20px;
+}
+
+
+.bio-about-section .bio-content-box {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #101010;
+    box-shadow: 15px 15px 15px 0px rgba(0, 0, 0, 0.15), -15px -15px 15px 0px rgba(0, 0, 0, 0.15);
+    color: #f4f4f4;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bio-about-section .bio-content-box h2 {
+    color: #F4F4F4;
+    text-align: center;
+    font-family: Georgia;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-top: 180px;
+}
+
+.bio-about-content .bio-content-box .bio-role {
+    color: #F4F4F4;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+.bio-about-section .bio-content-box .text {
+    color: #F4F4F4;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 26px;
+    width: 70%;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.bio-about-section .bio-social{
+    display: flex;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.bio-about-section .bio-social img{
+    width: 28px;
+    height: 28px;
+}
+
+
+@media (max-width: 767px) {
+    
+    /* .bio-about-section .profile-image img {
+        margin-bottom: 50px;
+    } */
+
+    .bio-about-section .bio-content-box {
+        width: 85%;
+    }
+
+    .bio-about-section .bio-content-box h2 {
+        font-size: 24px;
+    }
+
+    .bio-about-content .bio-content-box .bio-role {
+        font-size: 16px;
+    }
+
+    .bio-about-section .bio-content-box .text {
+        width: 100%;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/* Large screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  
+}
+
+/* Extra Large screens (1200px and above) */
+@media (min-width: 1200px) {
+  
+}

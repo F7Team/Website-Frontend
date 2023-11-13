@@ -94,13 +94,14 @@
 
 /* Small screens (576px to 767px) */
 @media (max-width: 767px) {
-  .container {
+  .navbar .container {
     max-width: 1440px;
     margin: 0 auto; /* Center the container horizontally */
     /* padding: 0 20px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0.96;
   }
 
   .menu-button {

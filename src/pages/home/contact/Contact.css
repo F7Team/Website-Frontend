@@ -1,0 +1,120 @@
+.contact-section {
+    padding-block: 50px;
+}
+
+
+
+.contact-section .container .back-image {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    z-index: 1;
+}
+
+.contact-section .contact-content {
+    width: 90%;
+    margin: 50px auto;
+    position: relative;
+}
+
+
+.contact-section .contact-box {
+    background: #F4F4F4;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.15), 4px 4px 20px 0px #C1C1C1 inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.contact-section .contact-box h2 {
+    color: #101010;
+    font-family: Georgia;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.contact-section .contact-box p {
+    color: rgba(16, 16, 16, 0.60);
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+
+.contact-section .contact-box input,
+.contact-section .contact-box textarea {
+    color: rgba(16, 16, 16, 0.50);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    background: transparent;
+    outline: none;
+    border: 1px solid #000;
+    border-width: 0 0 1px 0;
+    padding: 10px;
+    width: 70%;
+    min-width: 300px;
+}
+
+
+@media (max-width: 767px) {
+    .contact-section .contact-content {
+        width: 90%;
+    }
+
+    .contact-section .container .back-image {
+        top: -20px;
+        right: -20px;
+    }
+
+    .contact-section .container .back-image img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .contact-section .contact-box {
+        padding: 15px 20px;
+        align-items: center;
+    }
+
+    .contact-section .contact-box h2 {
+        color: #101010;
+        text-align: center;
+        font-family: Georgia;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+
+    .contact-section .contact-box p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .contact-section .contact-box input,
+    .contact-section .contact-box textarea {
+        font-size: 14px;
+       
+    }
+
+    .contact-section {
+        padding-top: 0px;
+    }
+
+
+}
