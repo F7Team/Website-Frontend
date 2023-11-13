@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
-import profile from './profile.png'
+import React, { useState } from 'react';
 import readBioButton from './Vector.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -96,10 +95,10 @@ function BioSlider({ page }) {
                         <SwiperSlide><ProfilePerson name={"JamesCodes"} darkTheme={darkTheme} /></SwiperSlide>
 
                         <div className="swiper-button-next" style={{ display: showRightNav ? 'block' : 'none' }} onClick={() => handleIconClick('next')}>
-                            <img src={darkTheme ? nextBtn : darkNextBtn} />
+                            <img src={darkTheme ? nextBtn : darkNextBtn} alt='nextButton'/>
                         </div>
                         <div className={`swiper-button-prev ${darkTheme ? '' : 'rotate'}`} style={{ display: showLeftNav ? 'block' : 'none' }} onClick={() => handleIconClick('prev')}>
-                            <img src={darkTheme ? prevBtn : darkPrevBtn} />
+                            <img src={darkTheme ? prevBtn : darkPrevBtn} alt='previousButton'/>
                         </div>
 
                     </Swiper>
@@ -120,7 +119,7 @@ function ProfilePerson({ name, darkTheme }) {
             <div className='person-read-more'>
                 <p>Read Bio</p>
                 <div>
-                    <img src={readBioButton} />
+                    <img src={readBioButton} alt={`${name}`}/>
                 </div>
             </div>
         </div>

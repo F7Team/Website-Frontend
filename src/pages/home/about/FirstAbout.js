@@ -7,7 +7,7 @@ const FirstAbout = () => {
         <section id='about' className="about">
             <div className="container">
                 <div className="about-background">
-                    <img src={aboutImage} alt="Background Image" />
+                    <img src={aboutImage} alt="Background" />
                 </div>
                 <div className="about-content">
                     <div className="about-header">

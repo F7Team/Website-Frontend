@@ -9,7 +9,6 @@ import 'swiper/css/pagination';
 
 
 import './ProjectsPage.css';
-import { Navigation, Pagination } from 'swiper/modules';
 import ProjectSlider from '../../components/slider/ProjectSlider';
 
 

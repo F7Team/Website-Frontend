@@ -7,7 +7,7 @@ const ThirdAbout = () => {
         <section className="third-about">
             <div className="container">
                 <div className="third-about-background">
-                    <img src={aboutImage} alt="Background Image" />
+                    <img src={aboutImage} alt="Background" />
                 </div>
                 <div className="third-about-content">
                     <div className="third-about-header">

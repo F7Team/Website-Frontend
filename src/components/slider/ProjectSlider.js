@@ -4,7 +4,7 @@ import image1 from './top-project-1.png'
 import behanceLogo from './behance.svg'
 import githubLogo from './github.svg'
 import linkLogo from './link.svg'
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -94,10 +94,10 @@ function ProjectSlider() {
                         <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
 
                         <div className="swiper-button-next" style={{ display: showRightNav ? 'block' : 'none' }} onClick={() => handleIconClick('next')}>
-                            <img src={nextBtn} />
+                            <img src={nextBtn} alt='nextButton'/>
                         </div>
                         <div className="swiper-button-prev" style={{ display: showLeftNav ? 'block' : 'none' }} onClick={() => handleIconClick('prev')}>
-                            <img src={prevBtn} />
+                            <img src={prevBtn} alt='previousButton'/>
                         </div>
                     </Swiper>
                 </div>

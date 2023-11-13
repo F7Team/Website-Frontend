@@ -1,10 +1,8 @@
 import React from 'react';
-import profile from '../slider/profile.png'
 import './BioAboutSection.css'
 import instagramIcon from '../footer/instagram.svg';
 import linkedinIcon from '../footer/linkedin.svg';
 import whatsappIcon from '../footer/whatsapp.svg';
-import Avatar from '../../pages/home/about/Avatar';
 import BioSectionAvatar from '../../pages/home/about/BioSectionAvatar';
 
 
@@ -25,10 +23,10 @@ function BioAboutSection() {
                             backend development and currently learning 
                             to build ios and macos apps.</p>
                         <div className='bio-social'>
-                            <img src={instagramIcon} />
-                            <img src={linkedinIcon} />
-                            <img src={whatsappIcon} />
-                            <img src={instagramIcon} />
+                            <img src={instagramIcon} alt='link'/>
+                            <img src={linkedinIcon} alt='link'/>
+                            <img src={whatsappIcon} alt='link'/>
+                            <img src={instagramIcon} alt='link'/>
                         </div>
                     </div>
                 </div>
