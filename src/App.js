@@ -16,7 +16,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -11,8 +11,8 @@ const ScrollHandler = () => {
       const activeSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
+          const offsetTop = 70 - (element.offsetTop);
+          const offsetBottom = 40 - (offsetTop + element.offsetHeight);
           return window.scrollY >= offsetTop && window.scrollY < offsetBottom;
         }
         return false;
