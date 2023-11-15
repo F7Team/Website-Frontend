@@ -20,25 +20,31 @@ const Footer = () => {
 
 
                         <div className="grid-item grid-2">
-                            <h3>Contact Us</h3>
                             <div>
-                                <p>hello@f7.com</p>
-                                <p>28, Canari Wharf, London. United Kingdom</p>
-                                <p>+1 234 567 890</p>
+                                <h3>Contact Us</h3>
+                                <div>
+                                    <p>fantasticflow7@gmail.com</p>
+                                    <p>Lagos, Nigeria</p>
+                                    <p>+1 234 567 890</p>
+                                </div>
+
                             </div>
                         </div>
 
                         <div className='grid-item grid-3'>
-                            <h3>Social Media</h3>
-                            <div className="social-icons">
-                                <img src={instagramIcon} alt="Instagram" />
-                                <img src={linkedinIcon} alt="LinkedIn" />
-                                <img src={whatsappIcon} alt="WhatsApp" />
+                            <div>
+                                <h3>Social Media</h3>
+                                <div className="social-icons">
+                                    <img src={instagramIcon} alt="Instagram" />
+                                    <img src={linkedinIcon} alt="LinkedIn" />
+                                    <img src={whatsappIcon} alt="WhatsApp" />
+                                </div>
                             </div>
+
                         </div>
                     </div>
                     <div className="copyright">
-                        &copy; 2023 Your Company Name. All rights reserved.
+                        &copy; 2023 Fantastic7 | All rights reserved.
                     </div>
                 </div>
             </div>

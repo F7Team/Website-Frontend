@@ -4,6 +4,8 @@ import SecondAbout from './SecondAbout'
 import ThirdAbout from './ThirdAbout'
 import BioSlider from '../../../components/slider/BioSlider';
 
+import personData from './testData/persons.json'
+
 
 const About = () => {
     return (
@@ -11,7 +13,7 @@ const About = () => {
             <FirstAbout />
             <SecondAbout />
             <ThirdAbout />
-            <BioSlider page={'home'}/>
+            <BioSlider page={'home'} persons={personData.persons}/>
         </>
     );
 };

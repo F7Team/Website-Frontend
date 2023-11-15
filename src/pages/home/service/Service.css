@@ -7,8 +7,8 @@
 .services-section .container {
   background-image: url('./bg.svg');
   background-repeat: no-repeat;
-  background-position: 100% 100%;
-  background-size: contain contain;
+  background-position: center;
+  background-size: contain;
   padding: 20px;
   max-width: 1440px;
   margin: 0 auto;
@@ -25,6 +25,7 @@
   line-height: normal;
   text-transform: capitalize;
   text-align: center;
+  padding-top: 40px;
 }
 
 .services-section .service-grid {
@@ -42,7 +43,10 @@
   padding: 10px;
   width: 200px;
   height: 250px;
+  cursor: pointer;
   box-shadow: 0px 16px 30px 0px rgba(0, 0, 0, 0.25), 16px 0px 30px 0px rgba(0, 0, 0, 0.25);
+  perspective: 1000px;
+  transition: transform 0.5s
 }
 
 .services-section .service-item img {
@@ -66,13 +70,34 @@
 .services-section .service-item:nth-child(1),
 .services-section .service-item:nth-child(3) {
   margin-top: -100px;
+  animation: moveDown 4s ease-in-out infinite alternate;
 }
+
+
 
 .services-section .service-item:nth-child(2),
 .services-section .service-item:nth-child(4) {
   margin-bottom: -100px;
+  animation: moveUp 4s ease-in-out infinite alternate;
 }
 
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(+100px);
+  }
+}
 
 
 
@@ -100,11 +125,13 @@
   .services-section .service-item:nth-child(1),
   .services-section .service-item:nth-child(3) {
     margin-top: 0px;
+    animation: none;
   }
 
   .services-section .service-item:nth-child(2),
   .services-section .service-item:nth-child(4) {
     margin-bottom: 0px;
+    animation: none;
   }
 
   .services-section .service-item {

@@ -9,8 +9,19 @@
   top: 0;
   max-height: 70px;
   margin-inline: auto;
-  z-index: 20;
+  z-index: 3;
+  transition: opacity 0.5s ease-in-out;
 }
+
+.navbar.hidden {
+  opacity: 0;
+  pointer-events: none; /* To prevent interaction with hidden elements */
+}
+
+.navbar.visible {
+  opacity: 1;
+}
+
 
 .navbar .container {
   max-width: 1440px;
@@ -23,6 +34,15 @@
 
 .logo-image {
   height: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+  /* border-radius: 50%; */
+}
+
+.logo-image:hover{
+  border: 1px solid #2F80ED;
+  background-color: #F4F4F4;
+
 }
 
 .menu-button {
@@ -84,11 +104,24 @@
   padding: 10px 20px;
   border-radius: 20px;
   background-color: transparent;
+  /* transition: all 0.3s ease-in-out; */
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  background: #2F80ED;
+.nav-links a.btn{
+  background-color: #2F80ED !important;
+}
+
+
+/* .nav-links a.active{} */
+
+.nav-links a:hover {
+  font-size: 19px;
+  color: #fff;
+}
+
+.nav-links a.btn:hover{
+  background-color: #2F80ED !important;
+  font-size: 18px;
 }
 
 
@@ -96,8 +129,7 @@
 @media (max-width: 767px) {
   .navbar .container {
     max-width: 1440px;
-    margin: 0 auto; /* Center the container horizontally */
-    /* padding: 0 20px; */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -109,29 +141,33 @@
   }
 
   .nav-links {
-    display: none; /* Initially hide the menu links for small screens */
+    display: flex;
     flex-direction: column;
     text-align: center;
-    position: absolute;
+    position: fixed;
     padding: 10px;
+    margin-right: 0;
     top: 70px;
-    left: 0;
-    right: 0;
+    right: -100%;
     gap: 10px;
     background-color: #4f4f4f;
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    margin-right: 0;
+    transition: all 1s ease-in-out;
+    height: 100vh;
+    max-height: 900px; 
+    width: 90%;
   }
 
   .nav-links li{
     width: 100%;
+    padding-block: 8px;
   }
 
   .nav-links a{
     display: block;
     width: 100%;
+    font-size: 24px;
+    text-align: left;
     border-radius: 5px;
   }
 
@@ -140,11 +176,13 @@
    background-color: #2F80ED;
   }
 
-
-
+  body.open{
+    background-color: #4f4f4f;
+  }
+  
   .nav-links.open {
     display: flex;
-    max-height: 300px; /* Adjust the max-height based on your content */
+    right: 0;
   }
 }
 

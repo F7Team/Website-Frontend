@@ -3,14 +3,14 @@ import './Works.css';
 import ProjectSlider from '../../../components/slider/ProjectSlider';
 
 
-function Works() {
+function Works({projects}) {
 
     return (
         <div className='works-section'>
-                <div className='work-content'>
-                    <ProjectSlider />
-                </div>
+            <div className='work-content'>
+                <ProjectSlider projects={projects}/>
             </div>
+        </div>
     )
 
 }

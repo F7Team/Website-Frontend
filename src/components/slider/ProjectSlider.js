@@ -17,7 +17,7 @@ import './ProjectSlider.css';
 import { Navigation, Pagination } from 'swiper/modules';
 
 
-function ProjectSlider() {
+function ProjectSlider({ projects }) {
     const [swiper, setSwiper] = useState(null);
     const [showLeftNav, setShowLeftNav] = useState(false);
     const [showRightNav, setShowRightNav] = useState(true);
@@ -83,21 +83,18 @@ function ProjectSlider() {
                         }
                         onSlideChange={updateNavigationVisibility}
                     >
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-                        <SwiperSlide><ProjectSingleSlide img={image1} /></SwiperSlide>
-
+                        {projects.map((project) => (
+                            <SwiperSlide key={project.id}>
+                                <ProjectSingleSlide
+                                    project={project}
+                                />
+                            </SwiperSlide>
+                        ))}
                         <div className="swiper-button-next" style={{ display: showRightNav ? 'block' : 'none' }} onClick={() => handleIconClick('next')}>
-                            <img src={nextBtn} alt='nextButton'/>
+                            <img src={nextBtn} alt='nextButton' />
                         </div>
                         <div className="swiper-button-prev" style={{ display: showLeftNav ? 'block' : 'none' }} onClick={() => handleIconClick('prev')}>
-                            <img src={prevBtn} alt='previousButton'/>
+                            <img src={prevBtn} alt='previousButton' />
                         </div>
                     </Swiper>
                 </div>
@@ -108,25 +105,36 @@ function ProjectSlider() {
 
 
 
-function ProjectSingleSlide({ img }) {
+function ProjectSingleSlide({ project }) {
+
+    const maxCharacters = 140;
+    const contentText = project.contentText;
+    const truncatedContent = contentText.length > maxCharacters
+        ? `${contentText.slice(0, maxCharacters)}...`
+        : contentText;
+
+    const webLink = project.webLink;
+    const behanceLink = project.behance;
+    const githubLink = project.githubLink;
     return (
         <div className='project-slide'>
-            <img src={img} alt='' />
+            <img src={image1} alt='' />
             <div className='project-slide-content'>
-                <p>Fin Tech</p>
-                <p>
-                    Research at the finest it can be with the latest technology advancement.
-                    You can carry out your banking activities with one click.
-                    wanna take it for a spin?
+                <p>{project.niche}</p>
+                <p>{truncatedContent}<button>Read more</button>
                 </p>
                 <div className='project-slide-links'>
-                    <img src={behanceLogo} alt='' />
-                    <img src={githubLogo} alt='' />
-                    <img src={linkLogo} alt='' />
+                    <img src={behanceLogo} alt='project-behance' onClick={(behanceLink) => loadUrl(behanceLink)} />
+                    <img src={githubLogo} alt='project-github' onClick={(githubLink) => loadUrl(githubLink)} />
+                    <img src={linkLogo} alt='project-weblink' onClick={(webLink) => loadUrl(webLink)} />
                 </div>
             </div>
         </div>
     );
+}
+
+function loadUrl(url) {
+    window.open(url, '_blank');
 }
 
 export default ProjectSlider;

@@ -15,7 +15,7 @@ import Avatar from '../../pages/home/about/Avatar';
 
 
 
-function BioSlider({ page }) {
+function BioSlider({ page, persons }) {
 
     const darkTheme = !(page === 'bio')
     const headerText = (page === 'bio') ? 'Other Creatives': 'Meet Our House of Creatives'
@@ -84,15 +84,14 @@ function BioSlider({ page }) {
                         }
                         onSlideChange={updateNavigationVisibility}
                     >
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"MichealCodes"} darkTheme={darkTheme} /></SwiperSlide>
-                        <SwiperSlide><ProfilePerson name={"JamesCodes"} darkTheme={darkTheme} /></SwiperSlide>
+                        {persons.map((person) => (
+                            <SwiperSlide key={person.id}>
+                                <ProfilePerson
+                                    person={person}
+                                    darkTheme={darkTheme}
+                                />
+                            </SwiperSlide>
+                        ))}
 
                         <div className="swiper-button-next" style={{ display: showRightNav ? 'block' : 'none' }} onClick={() => handleIconClick('next')}>
                             <img src={darkTheme ? nextBtn : darkNextBtn} alt='nextButton'/>
@@ -110,18 +109,20 @@ function BioSlider({ page }) {
 }
 
 
-function ProfilePerson({ name, darkTheme }) {
+function ProfilePerson({ person, darkTheme }) {
+
+    console.log(person.image)
     return (
         <div className={`person-container ${darkTheme ? 'dark-theme' : ''}`}>
-            <Avatar darkTheme={darkTheme} />
-            <p className='person-name'>{name}</p>
-            <p className='person-role'>Software Engineer</p>
+            <Avatar image={person.image} darkTheme={darkTheme} />
+            <p className='person-name'>{person.name}</p>
+            <p className='person-role'>{person.role}</p>
             <div className='person-read-more'>
                 <p>Read Bio</p>
                 <div>
-                    <img src={readBioButton} alt={`${name}`}/>
+                    <img src={readBioButton} alt={`${person.name}`}/>
                 </div>
-            </div>
+            </div> 
         </div>
     )
 }

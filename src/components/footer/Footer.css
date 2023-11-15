@@ -35,22 +35,23 @@
 
 .footer-content {
     width: 100%;
-    padding-inline: 20px;
+    padding-inline: 40px;
     margin-top: 20px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* gap: 20px; */
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     justify-content: space-between;
     align-items: start;
     column-gap: 20px;
+    padding-inline: 20px;
+    margin-inline: auto;
 }
 
 .grid-item {
-    width: 100%;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -67,7 +68,7 @@
 .grid-item h3 {
     color: #F4F4F4;
     font-family: Georgia;
-    font-size: 28px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -77,7 +78,8 @@
 .grid-item p {
     color: #F4F4F4;
     font-family: Poppins;
-    font-size: 27px;
+    font-size: 19px;
+    opacity: 0.7;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -98,7 +100,7 @@
 .grid-item.grid-3 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 
@@ -108,7 +110,7 @@
 
 .grid-item .social-icons {
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .grid-item .social-icons img {
@@ -127,6 +129,7 @@
     line-height: normal;
     text-transform: capitalize;
     margin-top: 20px;
+    margin-right: 20px;
 }
 
 @media (max-width: 767px) {
@@ -137,7 +140,6 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        text-transform: lowercase;
     }
 
     .grid-item.grid-1 p {
@@ -184,13 +186,11 @@
 
     .copyright {
         color: #F4F4F4;
-        font-family: Poppins;
         font-size: 10px;
-        font-style: normal;
         font-weight: 400;
         line-height: normal;
-        text-transform: capitalize;
         text-align: left;
+        margin-inline: 20px 0;
     }
 }
 
@@ -216,6 +216,12 @@
     .grid-item.grid-2 {
         grid-area: 2 / span 2;
         margin-top: 30px;
+    }
+
+    .footer .container {
+        background: #000;
+        background-image: none;
+        padding-top: 20px;
     }
 
    

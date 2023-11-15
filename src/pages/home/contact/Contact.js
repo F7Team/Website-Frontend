@@ -6,9 +6,9 @@ import './Contact.css'
 export default function Contact() {
 
     return (
-        <div id="contact" className='contact-section'>
+        <div className='contact-section'>
             <div className='container'>
-                <div className='contact-content'>
+                <div id="contact" className='contact-content'>
                     <div className='back-image'>
                         <img src={backIcon} alt='Contact Page' />
                     </div>
@@ -20,14 +20,12 @@ export default function Contact() {
                         <input type='text' placeholder='Email Address' />
                         <textarea
                             placeholder='Message'
-                            rows={6}
+                            rows={3}
                         >
                         </textarea>
-
+                        <button>Send</button>
                     </div>
-
                 </div>
-
             </div>
         </div>
     )

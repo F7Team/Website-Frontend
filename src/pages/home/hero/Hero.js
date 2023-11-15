@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import heroImage from './hero-image.png'
 import './Hero.css'; // Import your CSS file for styling
 
-const Hero = () => {
+const Hero = ({gotoContact}) => {
+
+    const onGetInTouchClicked = () => {
+        gotoContact();
+    }
+
     return (
         <section id='home' className="hero">
             {/* <div className="hero-background"></div> */}
@@ -14,7 +19,7 @@ const Hero = () => {
                         <p>We help businesses and companies turn great ideas into amazing apps, products and services
                         </p>
                         <div className="hero-button">
-                            <button>Get In Touch</button>
+                            <button onClick={onGetInTouchClicked}>Get In Touch</button>
                         </div>
                     </div>
                     <div className="hero-image">

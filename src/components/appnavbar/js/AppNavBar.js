@@ -1,26 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
 import logo from '../logo-image.svg';
 import '../css/AppNavBar.css';
 import {Link} from 'react-router-dom';
 import ScrollHandler from '../js/ScrollHandler'
 
-const AppNavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
+  
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const activeLink = ScrollHandler();
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+
+  const toggleMenuContent= ()=>{
+    toggleMenu();
+  }
+  
+
+
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      console.log();
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 50);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollPos, visible]);
+
+
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollTo(id);
   };
+  
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${visible ? '' : 'hidden'}`}>
       <div className="container">
         <div className="logo">
           <img className='logo-image' src={logo} alt="Logo" />
@@ -32,18 +52,13 @@ const AppNavBar = () => {
             <span></span>
           </div>
         </div>
-        {/* <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-        </ul> */}
 
+        
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><Link to="/#home" className={activeLink === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</Link></li>
           <li><Link to="/#services" className={activeLink === 'services' ? 'active' : ''} onClick={() => scrollToSection('services')}>Services</Link></li>
           <li><Link to="/#about" className={activeLink === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About Us</Link></li>
-          <li><Link to="/#contact" className={activeLink === 'contact' ? 'active' : ''} onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
+          <li><Link to="/#contact" className={`${activeLink === 'contact' ? 'active' : ''} btn`} onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
         </ul>
       </div>
     </nav>

@@ -80,7 +80,7 @@
 
 .hero-button {
     flex: 1;
-    padding: 20px;
+    padding-top: 20px;
 }
 
 .hero-button button {
@@ -98,6 +98,7 @@
     font-weight: 700;
     line-height: normal;
     text-transform: capitalize;
+    transition: all 0.5s;
 }
 
 .hero-button button:hover {

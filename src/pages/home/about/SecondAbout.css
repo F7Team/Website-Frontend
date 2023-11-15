@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.second-about .second-about-header h2{
+.second-about .second-about-header h2 {
     text-align: center;
     font-size: 2rem;
     color: #2F80ED;
@@ -26,7 +26,7 @@
 .second-about .service-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
     margin-block: 30px;
 }
 
@@ -34,12 +34,21 @@
     text-align: justify;
     color: #F4F4F4;
     text-align: center;
-    font-family: Poppins ;
+    font-family: Poppins;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
     padding: 20px;
     line-height: normal;
+    border: 1px solid #2F80ED;
+    border-radius: 20px;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+.second-about .service-item:hover {
+    transform: scale(1.07);
 }
 
 .service-item img {
@@ -70,7 +79,7 @@
         font-size: 17px;
     }
 
-    .second-about .service-item p{
+    .second-about .service-item p {
         font-size: 17px;
     }
 
