@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Footer from './components/footer/Footer';
+// import Footer from './components/footer/Footer';npm
 import BioPage from './pages/bio/BioPage';
 import Home from './pages/home/Home';
 import ProjectsPage from './pages/projects/ProjectsPage';

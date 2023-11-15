@@ -113,9 +113,7 @@ function ProjectSingleSlide({ project }) {
         ? `${contentText.slice(0, maxCharacters)}...`
         : contentText;
 
-    const webLink = project.webLink;
-    const behanceLink = project.behance;
-    const githubLink = project.githubLink;
+    
     return (
         <div className='project-slide'>
             <img src={image1} alt='' />
@@ -124,17 +122,17 @@ function ProjectSingleSlide({ project }) {
                 <p>{truncatedContent}<button>Read more</button>
                 </p>
                 <div className='project-slide-links'>
-                    <img src={behanceLogo} alt='project-behance' onClick={(behanceLink) => loadUrl(behanceLink)} />
-                    <img src={githubLogo} alt='project-github' onClick={(githubLink) => loadUrl(githubLink)} />
-                    <img src={linkLogo} alt='project-weblink' onClick={(webLink) => loadUrl(webLink)} />
+                    <img src={behanceLogo} alt='project-behance'  />
+                    <img src={githubLogo} alt='project-github'  />
+                    <img src={linkLogo} alt='project-weblink' />
                 </div>
             </div>
         </div>
     );
 }
 
-function loadUrl(url) {
-    window.open(url, '_blank');
-}
+// function loadUrl(url) {
+//     window.open(url, '_blank');
+// }
 
 export default ProjectSlider;

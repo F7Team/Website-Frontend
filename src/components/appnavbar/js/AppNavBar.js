@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import logo from '../logo-image.svg';
 import '../css/AppNavBar.css';
 import {Link} from 'react-router-dom';
@@ -11,9 +11,9 @@ const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
 
   const activeLink = ScrollHandler();
 
-  const toggleMenuContent= ()=>{
-    toggleMenu();
-  }
+  // const toggleMenuContent= ()=>{
+  //   toggleMenu();
+  // }
   
 
 
