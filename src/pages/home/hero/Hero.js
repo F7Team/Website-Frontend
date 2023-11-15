@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import heroImage from './hero-image.png'
 import './Hero.css'; // Import your CSS file for styling
 
