@@ -1,0 +1,95 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "contentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "niche": "Web Development",
+        "behance": "https://www.behance.net/example-project",
+        "webLink": "https://www.example-project.com",
+        "githubLink": "https://github.com/example-project",
+        "imageUrl": "https://example-project-images.com/image1.jpg"
+      },
+      {
+        "id": 2,
+        "contentText": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "niche": "Mobile App Development",
+        "behance": "https://www.behance.net/another-project",
+        "webLink": "https://www.another-project.com",
+        "githubLink": "https://github.com/another-project",
+        "imageUrl": "https://another-project-images.com/image2.jpg"
+      },
+      {
+        "id": 3,
+        "contentText": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "niche": "Data Science",
+        "behance": "https://www.behance.net/data-science-project",
+        "webLink": "https://www.data-science-project.com",
+        "githubLink": "https://github.com/data-science-project",
+        "imageUrl": "https://data-science-project-images.com/image3.jpg"
+      },
+      {
+        "id": 4,
+        "contentText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin eget lectus vitae odio laoreet dapibus. Sed suscipit, est vitae luctus congue, orci tortor convallis odio, ut luctus nisi purus vel arcu.",
+        "niche": "UI/UX Design",
+        "behance": "https://www.behance.net/uiux-design",
+        "webLink": "https://www.uiux-design.com",
+        "githubLink": "https://github.com/uiux-design",
+        "imageUrl": "https://uiux-design-images.com/image4.jpg"
+      },
+      {
+        "id": 5,
+        "contentText": "Vivamus suscipit, nisl vitae tristique fermentum, dui elit vulputate elit, nec dictum tortor orci sed mauris. Morbi lacinia elit ac massa cursus fermentum. Donec nec ipsum vestibulum, sagittis risus nec, consectetur urna.",
+        "niche": "E-commerce",
+        "behance": "https://www.behance.net/e-commerce-project",
+        "webLink": "https://www.e-commerce-project.com",
+        "githubLink": "https://github.com/e-commerce-project",
+        "imageUrl": "https://e-commerce-project-images.com/image5.jpg"
+      },
+      {
+        "id": 6,
+        "contentText": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Ut vel nulla vel velit scelerisque fringilla vitae ut risus. Donec vitae augue nec justo fermentum volutpat.",
+        "niche": "Artificial Intelligence",
+        "behance": "https://www.behance.net/ai-project",
+        "webLink": "https://www.ai-project.com",
+        "githubLink": "https://github.com/ai-project",
+        "imageUrl": "https://ai-project-images.com/image6.jpg"
+      },
+      {
+        "id": 7,
+        "contentText": "Quisque non velit id sem sodales aliquam. Vestibulum ut bibendum velit. Duis volutpat ultricies orci, vitae tempus orci suscipit et. In hac habitasse platea dictumst. Etiam id posuere orci. In hac habitasse platea dictumst.",
+        "niche": "Augmented Reality",
+        "behance": "https://www.behance.net/ar-project",
+        "webLink": "https://www.ar-project.com",
+        "githubLink": "https://github.com/ar-project",
+        "imageUrl": "https://ar-project-images.com/image7.jpg"
+      },
+      {
+        "id": 8,
+        "contentText": "Integer ullamcorper euismod tellus, eu cursus odio tristique vel. Sed fringilla efficitur libero a ullamcorper. Nam rhoncus mauris eget nisl blandit, in dictum dui bibendum. Vestibulum laoreet odio eu ligula auctor eleifend.",
+        "niche": "Blockchain",
+        "behance": "https://www.behance.net/blockchain-project",
+        "webLink": "https://www.blockchain-project.com",
+        "githubLink": "https://github.com/blockchain-project",
+        "imageUrl": "https://blockchain-project-images.com/image8.jpg"
+      },
+      {
+        "id": 9,
+        "contentText": "Fusce eu arcu eget nibh fermentum commodo. Morbi laoreet metus ut urna feugiat, id tristique nisi ultricies. Suspendisse potenti. Nulla facilisi. Proin auctor feugiat ipsum, vitae euismod tellus vestibulum vel.",
+        "niche": "Internet of Things",
+        "behance": "https://www.behance.net/iot-project",
+        "webLink": "https://www.iot-project.com",
+        "githubLink": "https://github.com/iot-project",
+        "imageUrl": "https://iot-project-images.com/image9.jpg"
+      },
+      {
+        "id": 10,
+        "contentText": "Cras id tristique quam, vitae fermentum sapien. Aenean non hendrerit erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam semper, justo at tempor fermentum, tortor mi fringilla dolor, vel fringilla erat mi a elit.",
+        "niche": "Cybersecurity",
+        "behance": "https://www.behance.net/cybersecurity-project",
+        "webLink": "https://www.cybersecurity-project.com",
+        "githubLink": "https://github.com/cybersecurity-project",
+        "imageUrl": "https://cybersecurity-project-images.com/image10.jpg"
+      }
+    ]
+  }
+  

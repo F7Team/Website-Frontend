@@ -1,0 +1,109 @@
+.project-page-top-section {
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.project-page-top-section .project-page-top-image {
+    min-width: fit-content;
+}
+
+.project-page-top-section .project-page-top-image img {
+    max-width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+    background: lightgray 50% / cover no-repeat, #101010;
+}
+
+
+.project-page-top-section .project-page-top-text {
+    color: #000;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.project-page-top-section p:nth-child(1) {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20xpx;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.project-page-top-links,
+.project-page-slide-links {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* Slider Section */
+
+
+@media (max-width: 767px) {
+
+    .project-page-top-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+        padding: 20px;
+    }
+
+    .project-page-top-section .project-page-top-image {
+        width: 90%;
+    }
+
+    .project-page-top-section .project-page-top-image img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .project-page-slider-section {
+        width: 100%;
+        padding: 0;
+        margin-inline: auto;
+    }
+
+    .project-page-slider-wrapper {
+        padding: 0;
+    }
+
+    .project-page-top-section .project-page-top-text {
+        text-align: center;
+        font-size: 18px;
+        padding: 0px;
+    }
+
+    .project-page-top-links {
+        text-align: center;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .project-page-top-section p:nth-child(1) {
+        font-size: 13px;
+    }
+
+    .project-page-top-links img {
+        width: 25px;
+        height: 25px;
+    }
+
+  
+    
+}

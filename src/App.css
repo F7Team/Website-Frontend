@@ -1,14 +1,21 @@
-.App {
+/* .App {
   text-align: center;
+  position: relative;
+    height: 100%;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
 .container{
   max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+.App{
   margin: 0 auto;
 }
 
@@ -17,13 +24,11 @@
 
 
 
-
-
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 /* .App-header {
   background-color: #282c34;
@@ -50,21 +55,20 @@
 }
 
 
-.Container{
+/* .Container{
   max-width: 1440px;
-}
+} */
 
 
 .AppNavBar {
-  /* Define styles for your navigation bar */
   background-color: #4f4f4f;
   color: #fff;
   padding: 10px;
-  position: fixed; /* Fixed position for the navigation bar */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1; /* Place the navigation bar above other content */
+  z-index: 1;
 }
 
 
