@@ -107,6 +107,7 @@
   .services-section .section-title {
     /* font-size: 24px; */
     margin-bottom: 30px;
+    padding-top: 0;
   }
 
   .services-section .container {

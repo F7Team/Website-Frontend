@@ -14,8 +14,8 @@
 }
 
 .navbar.hidden {
-  opacity: 0;
-  pointer-events: none; /* To prevent interaction with hidden elements */
+  /* opacity: 0; */
+  /* pointer-events: none;  */
 }
 
 .navbar.visible {
@@ -25,7 +25,8 @@
 
 .navbar .container {
   max-width: 1440px;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
+  /* Center the container horizontally */
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -39,14 +40,9 @@
   /* border-radius: 50%; */
 }
 
-.logo-image:hover{
-  border: 1px solid #2F80ED;
-  background-color: #F4F4F4;
-
-}
 
 .menu-button {
-  display: none; /* Display the menu button for small screens */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -57,7 +53,6 @@
 .menu-icon {
   display: block;
   width: 30px;
-  /* height: 3px; */
   background-color: transparent;
   margin: 6px 0;
   transition: 0.4s;
@@ -104,22 +99,21 @@
   padding: 10px 20px;
   border-radius: 20px;
   background-color: transparent;
-  /* transition: all 0.3s ease-in-out; */
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-links a.btn{
+.nav-links a.btn {
   background-color: #2F80ED !important;
 }
 
 
 /* .nav-links a.active{} */
-
 .nav-links a:hover {
   font-size: 19px;
   color: #fff;
 }
 
-.nav-links a.btn:hover{
+.nav-links a.btn:hover {
   background-color: #2F80ED !important;
   font-size: 18px;
 }
@@ -137,7 +131,7 @@
   }
 
   .menu-button {
-    display: block; /* Display the menu button for small screens */
+    display: block;
   }
 
   .nav-links {
@@ -154,16 +148,17 @@
     overflow: hidden;
     transition: all 1s ease-in-out;
     height: 100vh;
-    max-height: 900px; 
-    width: 90%;
+    max-height: 900px;
+    width: 75%;
+    min-width: 250px;
   }
 
-  .nav-links li{
+  .nav-links li {
     width: 100%;
     padding-block: 8px;
   }
 
-  .nav-links a{
+  .nav-links a {
     display: block;
     width: 100%;
     font-size: 24px;
@@ -172,14 +167,22 @@
   }
 
   .nav-links a:hover,
-  .nav-links a:active{
-   background-color: #2F80ED;
+  .nav-links a:active {
+    background-color: #2F80ED;
   }
 
-  body.open{
+  .nav-links a.btn {
+    text-align: center;
+    border-radius: 30px;
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 30px;
+  }
+
+  body.open {
     background-color: #4f4f4f;
   }
-  
+
   .nav-links.open {
     display: flex;
     right: 0;
@@ -187,16 +190,10 @@
 }
 
 /* Medium screens (768px to 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  
-}
+@media (min-width: 768px) and (max-width: 991px) {}
 
 /* Large screens (992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  
-}
+@media (min-width: 992px) and (max-width: 1199px) {}
 
 /* Extra Large screens (1200px and above) */
-@media (min-width: 1200px) {
-  
-}
+@media (min-width: 1200px) {}

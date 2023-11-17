@@ -1,47 +1,46 @@
-import React, { useState } from 'react';
-import AppNavBar from '../../components/appnavbar/js/AppNavBar';
+import React, { useState, useEffect } from 'react';
 import About from './about/About';
 import Hero from './hero/Hero';
 import Service from './service/Service';
 import Contact from './contact/Contact';
 import Works from './works/Works';
-import './Home.css'; 
+import './Home.css';
 
-const Home = ({projects}) => {
+const Home = ({
+  persons,
+  menuOpen,
+  locateSection
+}) => {
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const [projects, setProjects] = useState([]);
 
-  const scrollTo = (id) => {
-    toggleMenu();
-    const element = document.getElementById(id);
+  useEffect(() => {
+    const apiUrl = `${process.env.REACT_APP_API_BASE_URL}works/`;
 
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const targetPosition = rect.top + scrollTop;
-
-      window.scrollTo({
-        top: targetPosition - 75,
-        behavior: 'smooth',
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        setProjects(data);
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
       });
-    }
-  }
+  }, []); 
+
 
   return (
     <>
-      <AppNavBar
-        menuOpen={menuOpen}
-        toggleMenu={() => toggleMenu()}
-        scrollTo={(id) => scrollTo(id)}
-      />
       <div className={`page-content ${menuOpen ? 'inactive' : ''}`}>
-        <Hero gotoContact={() => scrollTo('contact')}/>
-        <About />
+        <div className='cover'></div>
+        <Hero gotoContact={() => locateSection('contact')} />
+        <About persons={persons} />
         <Service />
-        <Works projects={projects}/>
+        <Works projects={projects} />
         <Contact />
       </div>
     </>

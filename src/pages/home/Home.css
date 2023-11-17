@@ -4,10 +4,41 @@
     transform: translateY(0);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
+
+  .page-content {
+      position: relative;
+  }
+
+  .cover{
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out;
+  }
   
 
-.page-content.inactive {
-  pointer-events: none; 
-  overflow: hidden;
-  overscroll-behavior: none;
+
+
+
+@media (max-width: 767px) {
+
+  .page-content.inactive {
+     pointer-events: none;
+     overflow: hidden;
+  }
+
+  .page-content.inactive .cover{
+    display: block;
+    background-color: #000;
+    opacity: 0.4;
+  }
+
 }
+
+
