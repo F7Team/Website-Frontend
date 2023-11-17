@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AppNavBar from '../../components/appnavbar/js/AppNavBar';
 import image2 from './top-project-2.png'
 import behanceLogo from './behance.svg'
@@ -6,6 +6,7 @@ import githubLogo from './github.svg'
 import linkLogo from './link.svg'
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useParams } from 'react-router-dom';
 
 
 import './ProjectsPage.css';
@@ -13,35 +14,73 @@ import ProjectSlider from '../../components/slider/ProjectSlider';
 
 
 function ProjectsPage() {
+
+    const { projectId } = useParams();
+
+    const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = `${process.env.REACT_APP_API_BASE_URL}works/`;
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        setProjects(data);
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+      });
+  }, []);
+  
+  if(projects < 1){
+    return null;
+  }
+
+  const selectedProject = projects.find(project => project.id === Number(projectId));
+    
     return (
         <div className='Projects'>
-            <AppNavBar />
-            <TopProject />
-            <ProjectSlider />
+            <TopProject project={selectedProject}/>
+            <ProjectSlider projects={projects}/>
+            <div
+            style={{
+                height: '100px'
+            }}
+            ></div>
         </div>
     )
 }
 
-function TopProject() {
+function TopProject({project}) {
     return (
         <div className='container'>
 
             <div className='project-page-top-section'>
                 <div className='project-page-top-image'>
-                    <img src={image2} alt='' />
+                    <img src={project.image} alt='' />
                 </div>
                 <div className='project-page-top-text'>
                     <div>
-                        <p>Fin  Tech</p>
-                        <p>research at the finest it can be with the latest technology advancement.
-                            You can carry out your banking activities with one click.
-                            wanna take it for a spin?
-                        </p>
+                        <p>{project.title}</p>
+                        <p>{project.project_description}</p>
                     </div>
                     <div className='project-page-top-links'>
-                        <img src={behanceLogo} alt='' />
-                        <img src={githubLogo} alt='' />
-                        <img src={linkLogo} alt='' />
+                    {project.behance !== 'nil' &&
+                        <img src={behanceLogo} alt='project-behance' onClick={() => loadUrl(project.behance)} />
+                    }
+
+                    {project.github !== 'nil' &&
+                        <img src={githubLogo} alt='project-github' onClick={() => loadUrl(project.github)} />
+                    }
+
+                    {project.website !== 'nil' &&
+                        <img src={linkLogo} alt='project-weblink' onClick={() => loadUrl(project.website)} />
+                    }
                     </div>
                 </div>
             </div>
@@ -49,6 +88,9 @@ function TopProject() {
     );
 }
 
+function loadUrl(url) {
+    window.open(url, '_blank');
+}
 
 
 

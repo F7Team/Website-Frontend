@@ -3,13 +3,14 @@ import AppNavBar from '../../components/appnavbar/js/AppNavBar';
 import BioAboutSection from '../../components/bio/BioAboutSection';
 import BioSlider from '../../components/slider/BioSlider';
 
-function BioPage(){
+function BioPage({
+    persons
+}) {
 
-    return(
+    return (
         <div className='Bio'>
-            <AppNavBar />
             <BioAboutSection />
-            <BioSlider page={'bio'}/>
+            <BioSlider page={'bio'} persons={persons} />
         </div>
     );
 }

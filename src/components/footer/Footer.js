@@ -1,11 +1,12 @@
 import React from 'react';
 import './Footer.css'; // Import your CSS file for styling
 import logoImage from './footer-logo.png'; // Import your logo image
-import instagramIcon from './instagram.svg';
 import linkedinIcon from './linkedin.svg';
-import whatsappIcon from './whatsapp.svg';
+import twitterIcon from './twitter_x.svg';
 
 const Footer = () => {
+    const linkedin = 'https://www.linkedin.com/company/fantastic7/'
+    const twitter = 'https://x.com/F7teamdotcom?t=WeIzLbl3tFj7dBBrnubm5Q&s=09'
     return (
         <footer className="footer">
             <div className='container'>
@@ -35,9 +36,8 @@ const Footer = () => {
                             <div>
                                 <h3>Social Media</h3>
                                 <div className="social-icons">
-                                    <img src={instagramIcon} alt="Instagram" />
-                                    <img src={linkedinIcon} alt="LinkedIn" />
-                                    <img src={whatsappIcon} alt="WhatsApp" />
+                                    <img src={linkedinIcon} alt="LinkedIn" onClick={()=>loadUrl(linkedin)}/>
+                                    <img src={twitterIcon} alt="X" onClick={()=>loadUrl(twitter)}/>
                                 </div>
                             </div>
 
@@ -51,5 +51,12 @@ const Footer = () => {
         </footer>
     );
 };
+
+
+function loadUrl(url) {
+    window.open(url, '_blank');
+}
+
+
 
 export default Footer;

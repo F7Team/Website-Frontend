@@ -11,8 +11,8 @@
 
 .project-page-top-section .project-page-top-image img {
     max-width: 450px;
-    height: 450px;
-    object-fit: cover;
+    height: fit-content;
+    object-fit: contain;
     border-radius: 15px 15px 0px 0px;
     background: lightgray 50% / cover no-repeat, #101010;
 }
@@ -21,7 +21,7 @@
 .project-page-top-section .project-page-top-text {
     color: #000;
     font-family: Poppins;
-    font-size: 28px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -35,7 +35,7 @@
 .project-page-top-section p:nth-child(1) {
     color: #000;
     font-family: Poppins;
-    font-size: 20xpx;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -47,6 +47,10 @@
 .project-page-slide-links {
     display: flex;
     gap: 10px;
+}
+
+.project-page-top-links img{
+    cursor: pointer;
 }
 
 

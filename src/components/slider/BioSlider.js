@@ -11,11 +11,12 @@ import darkPrevBtn from './next.svg'
 import nextBtn from './right.svg'
 import prevBtn from './left.svg'
 import Avatar from '../../pages/home/about/Avatar';
+// import imag2 from '../../test/testData/images'
 
 
 
 
-function BioSlider({ page, persons }) {
+function BioSlider({ page, persons, person }) {
 
     const darkTheme = !(page === 'bio')
     const headerText = (page === 'bio') ? 'Other Creatives': 'Meet Our House of Creatives'
@@ -78,7 +79,7 @@ function BioSlider({ page, persons }) {
                         }}
                         modules={[Pagination, Navigation]}
                         className="mySwiper"
-                        getSwiper={setSwiper}
+                        getSwiper={() => setSwiper(swiper)}
                         onInit={(swiper) =>
                             setSwiper(swiper)
                         }
@@ -111,12 +112,13 @@ function BioSlider({ page, persons }) {
 
 function ProfilePerson({ person, darkTheme }) {
 
+    const image = require(`../../test/testData/images/${person.image}`).default;
     console.log(person.image)
     return (
         <div className={`person-container ${darkTheme ? 'dark-theme' : ''}`}>
             <Avatar image={person.image} darkTheme={darkTheme} />
             <p className='person-name'>{person.name}</p>
-            <p className='person-role'>{person.role}</p>
+            <p className='person-role'>{person.techRole}</p>
             <div className='person-read-more'>
                 <p>Read Bio</p>
                 <div>

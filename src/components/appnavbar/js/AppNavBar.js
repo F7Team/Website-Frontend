@@ -6,6 +6,7 @@ import ScrollHandler from '../js/ScrollHandler'
 
 const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
   
+  
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -55,10 +56,10 @@ const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
 
         
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li><Link to="/#home" className={activeLink === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</Link></li>
-          <li><Link to="/#services" className={activeLink === 'services' ? 'active' : ''} onClick={() => scrollToSection('services')}>Services</Link></li>
-          <li><Link to="/#about" className={activeLink === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About Us</Link></li>
-          <li><Link to="/#contact" className={`${activeLink === 'contact' ? 'active' : ''} btn`} onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
+          <li><Link to="/" className={activeLink === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</Link></li>
+          <li><Link to="/" className={activeLink === 'services' ? 'active' : ''} onClick={() => scrollToSection('services')}>Services</Link></li>
+          <li><Link to="/" className={activeLink === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About Us</Link></li>
+          <li><Link to="/" className={`${activeLink === 'contact' ? 'active' : ''} btn`} onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
         </ul>
       </div>
     </nav>

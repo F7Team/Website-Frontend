@@ -2,19 +2,19 @@
     "persons": [
       {
         "id": 1,
-        "image": "./testData/images/micheal_image.png",
+        "image": "micheal_image.png",
         "name": "Micheal Codes",
         "techRole": "Software Engineer"
       },
       {
         "id": 2,
-        "image": "./testData/images/jesse_image.png",
+        "image": "jesse_image.png",
         "name": "Jesse",
         "techRole": "Data Scientist"
       },
       {
         "id": 3,
-        "image": "./testData/images/ola_image.png",
+        "image": "ola_image.png",
         "name": "Ola",
         "techRole": "Web Developer"
       },

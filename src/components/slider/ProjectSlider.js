@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import image1 from './top-project-1.png'
 import behanceLogo from './behance.svg'
 import githubLogo from './github.svg'
@@ -47,7 +47,11 @@ function ProjectSlider({ projects }) {
         <div className='container'>
             <div className='project-slider-section'>
                 <div className='project-slider-wrapper'>
-                    <h2>Our Works </h2>
+                    {projects.length === 0 ? null : (
+                        <>
+                            <h2>{projects.length === 1 ? 'Our Work' : 'Our Works'}</h2>
+                        </>
+                    )}
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={10}
@@ -105,34 +109,43 @@ function ProjectSlider({ projects }) {
 
 
 
-function ProjectSingleSlide({ project }) {
+export function ProjectSingleSlide({ project }) {
 
+    const navigate = useNavigate();
     const maxCharacters = 140;
-    const contentText = project.contentText;
+    const contentText = project.project_description;
     const truncatedContent = contentText.length > maxCharacters
         ? `${contentText.slice(0, maxCharacters)}...`
         : contentText;
 
-    
+
     return (
         <div className='project-slide'>
-            <img src={image1} alt='' />
+            <img src={project.image} alt='' />
             <div className='project-slide-content'>
-                <p>{project.niche}</p>
-                <p>{truncatedContent}<button>Read more</button>
+                <p>{project.title}</p>
+                <p>{truncatedContent}<button onClick={() => navigate(`/projects/${project.id}`)}>read more</button>
                 </p>
                 <div className='project-slide-links'>
-                    <img src={behanceLogo} alt='project-behance'  />
-                    <img src={githubLogo} alt='project-github'  />
-                    <img src={linkLogo} alt='project-weblink' />
+                    {project.behance !== 'nil' &&
+                        <img src={behanceLogo} alt='project-behance' onClick={() => loadUrl(project.behance)} />
+                    }
+
+                    {project.github !== 'nil' &&
+                        <img src={githubLogo} alt='project-github' onClick={() => loadUrl(project.github)} />
+                    }
+
+                    {project.website !== 'nil' &&
+                        <img src={linkLogo} alt='project-weblink' onClick={() => loadUrl(project.website)} />
+                    }
                 </div>
             </div>
         </div>
     );
 }
 
-// function loadUrl(url) {
-//     window.open(url, '_blank');
-// }
+function loadUrl(url) {
+    window.open(url, '_blank');
+}
 
 export default ProjectSlider;

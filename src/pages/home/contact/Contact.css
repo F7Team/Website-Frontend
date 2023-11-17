@@ -53,7 +53,7 @@
 
 
 .contact-section .contact-box input::placeholder,
-.contact-section .contact-box textarea::placeholder{
+.contact-section .contact-box textarea::placeholder {
     color: rgba(16, 16, 16, 0.50);
 }
 
@@ -67,7 +67,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-transform: capitalize;
     background: transparent;
     outline: none;
     border: 1px solid #000;
@@ -88,7 +87,7 @@
 }
 
 .contact-section .contact-box button:hover {
-   background-color: #0f5ec6;
+    background-color: #0f5ec6;
 }
 
 
@@ -108,8 +107,10 @@
     }
 
     .contact-section .contact-box {
-        padding: 15px 20px;
+        padding: 30px 20px;
         align-items: center;
+        background: #F4F4F4;
+        box-shadow: 4.11738px 4.11738px 8.23476px 0px rgba(0, 0, 0, 0.15), 1.09797px 1.09797px 5.48984px 0px #C1C1C1 inset, 0px 1.09797px 1.09797px 0px rgba(0, 0, 0, 0.25);
     }
 
     .contact-section .contact-box h2 {
@@ -131,12 +132,8 @@
     .contact-section .contact-box input,
     .contact-section .contact-box textarea {
         font-size: 14px;
-       
-    }
 
-    /* .contact-section {
-        padding-top: 0px;
-    } */
+    }
 
     .contact-section .contact-box button {
         font-size: 14px;
