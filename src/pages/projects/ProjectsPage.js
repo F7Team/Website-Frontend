@@ -21,7 +21,7 @@ function ProjectsPage() {
     const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const apiUrl = `${process.env.REACT_APP_API_BASE_URL}works/`;
+    const apiUrl = 'https://f7team.vercel.app/api/works/';
 
     fetch(apiUrl)
       .then(response => {
