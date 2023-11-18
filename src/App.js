@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Testing data
-import projectData from './test/projects.json'
+// import projectData from './test/projects.json'
 import personData from './test/persons.json'
 
 
