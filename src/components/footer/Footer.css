@@ -226,6 +226,10 @@
         background-image: url('sm-footer-back.png');
     }
 
+    .footer-content {
+        padding-inline: 20px;
+    }
+
 }
 
 
