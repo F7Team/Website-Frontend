@@ -17,7 +17,7 @@ import Avatar from '../../pages/home/about/Avatar';
 
 
 
-function BioSlider({ page, persons }) {
+function BioSlider({ page, persons, person }) {
 
     const darkTheme = !(page === 'bio')
     const headerText = (page === 'bio') ? 'Other Creatives': 'Meet Our House of Creatives'

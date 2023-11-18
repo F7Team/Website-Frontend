@@ -28,6 +28,7 @@ function App() {
     }
     else setMenuOpen(false)
 };
+  
   const locateSection = (id) => {
     const element = document.getElementById(id);
 
@@ -66,6 +67,7 @@ function App() {
             />} />
           <Route path="/bio/:personId" element={
             <BioPage/>
+
 
           } />
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
