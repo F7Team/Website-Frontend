@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImage from './profile.png';
+// import profileImage from './profile.png';
 import './Avatar.css'; // Import your CSS styles
 
 
