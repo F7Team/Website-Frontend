@@ -59,7 +59,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    text-transform: capitalize;
 }
 
 .bio-about-section .bio-social{
@@ -71,7 +70,9 @@
 .bio-about-section .bio-social img{
     width: 28px;
     height: 28px;
+    cursor: pointer;
 }
+
 
 
 @media (max-width: 767px) {
