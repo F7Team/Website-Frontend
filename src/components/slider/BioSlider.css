@@ -167,14 +167,15 @@
     font-weight: 500;
     line-height: normal;
     text-transform: capitalize;
+    border: 1px solid #2F80ED;
+    border-radius: 20px;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
 }
 
-.person-container .person-read-more:hover{
-    border: 1px solid #2F80ED;
-    border-radius: 20px;
-}
+/* .person-container .person-read-more:hover{
+    border-width: 2px;
+} */
 
 
 .person-container .person-read-more>div {
@@ -245,6 +246,7 @@
     line-height: normal;
     text-transform: capitalize;
     margin: 0px;
+    text-align: center;
 }
 
 .bio-slider-section .swiper-slide {

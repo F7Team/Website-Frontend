@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import image1 from './top-project-1.png'
+// import image1 from './top-project-1.png'
 import behanceLogo from './behance.svg'
 import githubLogo from './github.svg'
 import linkLogo from './link.svg'

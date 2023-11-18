@@ -1,32 +1,41 @@
 import React from 'react';
 import './BioAboutSection.css'
-import instagramIcon from '../footer/instagram.svg';
+// import instagramIcon from '../footer/instagram.svg';
+// import whatsappIcon from '../footer/whatsapp.svg';
 import linkedinIcon from '../footer/linkedin.svg';
-import whatsappIcon from '../footer/whatsapp.svg';
+import twitterIcon from '../footer/twitter_x.svg';
+import webLinkIcon from '../../pages/projects/link.svg';
+import githubIcon from '../../pages/projects/github.svg';
+import behanceIcon from '../../pages/projects/behance.svg';
 import BioSectionAvatar from '../../pages/home/about/BioSectionAvatar';
 
 
-function BioAboutSection() {
+function BioAboutSection({ person }) {
+
+    if (!person) {
+        return null;
+    }
 
     return (
         <div className='bio-about-section'>
             <div className='container'>
                 <div className='bio-about-content'>
-                    <BioSectionAvatar />
+                    <BioSectionAvatar image={person.photo} />
                     <div className='bio-content-box'>
-                        <h2>MichealCodes</h2>
-                        <p className='bio-role'>CEO, Software Engineer</p>
-                        <p className='text'>with 15 years of experience using flutter, 
-                            react and nodejs, michael is a software and 
-                            machine learning engineer. referred to as a 
-                            rook on the chessboard, he’s a major in 
-                            backend development and currently learning 
-                            to build ios and macos apps.</p>
+                        <h2>{person.name}</h2>
+                        <p className='bio-role'>{`${person.position}, ${person.career}`}</p>
+                        <p className='text'>{person.about}</p>
                         <div className='bio-social'>
-                            <img src={instagramIcon} alt='link'/>
-                            <img src={linkedinIcon} alt='link'/>
-                            <img src={whatsappIcon} alt='link'/>
-                            <img src={instagramIcon} alt='link'/>
+                            {person.linkedin !== 'nil' &&
+                                <img src={linkedinIcon} alt='Linkedin link' onClick={() => loadUrl(person.linkedin)} />}
+                            {person.behance !== 'nil' &&
+                                <img src={behanceIcon} alt='Behance link' onClick={() => loadUrl(person.behance)} />}
+                            {person.github !== 'nil' &&
+                                <img src={githubIcon} alt='Github link' onClick={() => loadUrl(person.github)} />}
+                            {person.twitter !== 'nil' &&
+                                <img src={twitterIcon} alt='Twitter link' onClick={() => loadUrl(person.twitter)} />}
+                            {person.website !== 'nil' &&
+                                <img src={webLinkIcon} alt='weblink' onClick={() => loadUrl(person.website)} />}
                         </div>
                     </div>
                 </div>
@@ -35,6 +44,9 @@ function BioAboutSection() {
     );
 }
 
+function loadUrl(url) {
+    window.open(url, '_blank');
+  }
 
 
 export default BioAboutSection;

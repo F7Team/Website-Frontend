@@ -11,7 +11,7 @@ function Avatar({image, darkTheme }) {
     <div className={`avatar-container ${darkTheme ? 'dark-theme': ''} `}>
       <div className="avatar-circle">
         <div className="avatar-image">
-          <img src={profileImage} alt="Profile"/>
+          <img src={image} alt="Profile"/>
         </div>
       </div>
     </div>

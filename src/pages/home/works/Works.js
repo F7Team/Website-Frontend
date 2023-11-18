@@ -1,6 +1,7 @@
 import React from 'react';
+// import ProjectSlider, { ProjectSingleSlide } from '../../../components/slider/ProjectSlider';
 import './Works.css';
-import ProjectSlider, { ProjectSingleSlide } from '../../../components/slider/ProjectSlider';
+import ProjectSlider2 from '../../../components/slider/ProjectSlider2';
 
 
 function Works({ projects }) {
@@ -8,20 +9,10 @@ function Works({ projects }) {
 
     return (
         <div className='works-section'>
-            <div className='work-content'>
-                {/* <div>
-                    {projects.map((project) => (
-                        <ProjectSingleSlide
-                            key={project.id}
-                            project={project}
-                        />
-                    ))}
-                </div> */}
-                <ProjectSlider projects={projects}/>
-            </div>
+            <ProjectSlider2 projects={projects} />
         </div>
     )
-
 }
+
 
 export default Works;

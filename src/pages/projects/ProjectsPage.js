@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import AppNavBar from '../../components/appnavbar/js/AppNavBar';
-import image2 from './top-project-2.png'
+// import AppNavBar from '../../components/appnavbar/js/AppNavBar';
+// import image2 from './top-project-2.png'
 import behanceLogo from './behance.svg'
 import githubLogo from './github.svg'
 import linkLogo from './link.svg'
@@ -10,7 +10,8 @@ import { useParams } from 'react-router-dom';
 
 
 import './ProjectsPage.css';
-import ProjectSlider from '../../components/slider/ProjectSlider';
+// import ProjectSlider from '../../components/slider/ProjectSlider';
+import ProjectSlider2 from '../../components/slider/ProjectSlider2';
 
 
 function ProjectsPage() {
@@ -46,7 +47,7 @@ function ProjectsPage() {
     return (
         <div className='Projects'>
             <TopProject project={selectedProject}/>
-            <ProjectSlider projects={projects}/>
+            <ProjectSlider2 projects={projects} />
             <div
             style={{
                 height: '100px'
