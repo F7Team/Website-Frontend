@@ -10,20 +10,25 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Testing data
-import projectData from './test/projects.json'
-import personData from './test/persons.json'
+// import projectData from './test/projects.json'
+// import personData from './test/persons.json'
 
 
 
 function App() {
 
   const [menuOpen, setMenuOpen] = useState(false);
+
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
 
+    // Only toggle menu if it's a mobile screen
+    if (isMobile) {
+        setMenuOpen(!menuOpen);
+    }
+    else setMenuOpen(false)
+};
   
-
   const locateSection = (id) => {
     const element = document.getElementById(id);
 
@@ -56,15 +61,13 @@ function App() {
         <Routes>
           <Route path="/" element={
             <Home
-              persons={personData.persons}
               menuOpen={menuOpen}
               locateSection={locateSection}
 
             />} />
-          <Route path="/bio" element={
-            <BioPage
-              persons={personData.persons}
-            />
+          <Route path="/bio/:personId" element={
+            <BioPage/>
+
 
           } />
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
@@ -76,6 +79,8 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
 

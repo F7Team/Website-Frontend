@@ -7,16 +7,15 @@ import Works from './works/Works';
 import './Home.css';
 
 const Home = ({
-  persons,
   menuOpen,
   locateSection
 }) => {
 
   const [projects, setProjects] = useState([]);
+  const [members, setMembers] = useState([]);
 
   useEffect(() => {
-    const apiUrl = `${process.env.REACT_APP_API_BASE_URL}works/`;
-
+    const apiUrl = 'https://f7team.vercel.app/api/works/';
     fetch(apiUrl)
       .then(response => {
         if (!response.ok) {
@@ -33,12 +32,30 @@ const Home = ({
   }, []); 
 
 
+  useEffect(() => {
+    const apiUrl = 'https://f7team.vercel.app/api/members/';
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        setMembers(data);
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+      });
+  }, []); 
+
+
   return (
     <>
       <div className={`page-content ${menuOpen ? 'inactive' : ''}`}>
         <div className='cover'></div>
         <Hero gotoContact={() => locateSection('contact')} />
-        <About persons={persons} />
+        <About persons={members} />
         <Service />
         <Works projects={projects} />
         <Contact />

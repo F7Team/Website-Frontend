@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import backIcon from './contactImg.svg'
-import './Contact.css'
+import backIcon from './contactImg.svg';
+import './Contact.css';
 import { toast } from 'react-toastify';
 
-
-
 export default function Contact() {
-
-    const apiUrl = `${process.env.REACT_APP_API_BASE_URL}contact-us/`;
+    const apiUrl = 'https://f7team.vercel.app/api/contact-us/send_email_and_save/';
 
     const [formData, setFormData] = useState({
         name: '',
@@ -15,17 +12,19 @@ export default function Contact() {
         message: '',
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            // Show pending toast
+            setIsSubmitting(true); // Disable the button during submission
+
             const promise = toast.promise(
                 fetch(apiUrl, {
                     method: 'POST',
@@ -35,32 +34,29 @@ export default function Contact() {
                     body: JSON.stringify(formData),
                 }).then((response) => {
                     if (response.ok) {
-                        // Clear input fields
                         setFormData({
                             name: '',
                             email: '',
                             message: '',
                         });
-
-                        // Show success toast
                         return 'Message sent successfully';
                     } else {
-                        // Show error toast
                         throw new Error('Error sending message');
                     }
                 }),
                 {
+                    position: 'bottom-right',
                     pending: 'Sending...',
                     success: 'Message sent successfully',
                     error: 'Error sending message',
                 }
             );
 
-            // You can perform further actions upon successful submission
             await promise;
-
         } catch (error) {
             console.error('Error:', error);
+        } finally {
+            setIsSubmitting(false); // Re-enable the button after submission
         }
     };
 
@@ -84,7 +80,6 @@ export default function Contact() {
                                 onChange={handleChange}
                                 required
                             />
-
                             <input
                                 type="text"
                                 placeholder="Email Address"
@@ -100,9 +95,11 @@ export default function Contact() {
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
-                            >
-                            </textarea>
-                            <button type='submit'>Send</button>
+                            />
+                            <button type='submit' disabled={isSubmitting}>
+                                {isSubmitting ? 'Sending...' : 'Send'}
+                            </button>
+
                         </form>
                     </div>
                 </div>
@@ -110,3 +107,4 @@ export default function Contact() {
         </div>
     );
 }
+

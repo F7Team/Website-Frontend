@@ -121,6 +121,10 @@
 
 /* Small screens (576px to 767px) */
 @media (max-width: 767px) {
+
+  .logo-image {
+    margin-left: -20px;
+  }
   .navbar .container {
     max-width: 1440px;
     margin: 0 auto;
