@@ -26,7 +26,7 @@ const Footer = () => {
                                 <div>
                                     <p>fantasticflow7@gmail.com</p>
                                     <p>Lagos, Nigeria</p>
-                                    <p>+1 234 567 890</p>
+                                    <p>+234 703 722 5963</p>
                                 </div>
 
                             </div>

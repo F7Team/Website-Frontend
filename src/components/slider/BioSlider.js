@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import readBioButton from './Vector.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -100,7 +101,6 @@ function BioSlider({ page, persons, person }) {
                         <div className={`swiper-button-prev ${darkTheme ? '' : 'rotate'}`} style={{ display: showLeftNav ? 'block' : 'none' }} onClick={() => handleIconClick('prev')}>
                             <img src={darkTheme ? prevBtn : darkPrevBtn} alt='previousButton'/>
                         </div>
-
                     </Swiper>
                 </div>
             </div>
@@ -111,18 +111,17 @@ function BioSlider({ page, persons, person }) {
 
 
 function ProfilePerson({ person, darkTheme }) {
+    const navigate = useNavigate();
 
-    const image = require(`../../test/testData/images/${person.image}`).default;
-    console.log(person.image)
     return (
         <div className={`person-container ${darkTheme ? 'dark-theme' : ''}`}>
-            <Avatar image={person.image} darkTheme={darkTheme} />
+            <Avatar image={person.photo} darkTheme={darkTheme} />
             <p className='person-name'>{person.name}</p>
-            <p className='person-role'>{person.techRole}</p>
+            <p className='person-role'>{person.position}</p>
             <div className='person-read-more'>
                 <p>Read Bio</p>
                 <div>
-                    <img src={readBioButton} alt={`${person.name}`}/>
+                    <img src={readBioButton} alt={`${person.name}`} onClick={() => navigate(`/bio/${person.id}`)}/>
                 </div>
             </div> 
         </div>
