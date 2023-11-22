@@ -61,8 +61,10 @@ const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
         
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><Link to="/" className={activeLink === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</Link></li>
-          <li><Link to="/" className={activeLink === 'services' ? 'active' : ''} onClick={() => scrollToSection('services')}>Services</Link></li>
           <li><Link to="/" className={activeLink === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>About Us</Link></li>
+          <li><Link to="/" className={activeLink === 'teams' ? 'active' : ''} onClick={() => scrollToSection('teams')}>Team</Link></li>
+          <li><Link to="/" className={activeLink === 'services' ? 'active' : ''} onClick={() => scrollToSection('services')}>Services</Link></li>
+          <li><Link to="/" className={activeLink === 'works' ? 'active' : ''} onClick={() => scrollToSection('works')}>Projects</Link></li>
           <li><Link to="/" className={`${activeLink === 'contact' ? 'active' : ''} btn`} onClick={() => scrollToSection('contact')}>Contact Us</Link></li>
         </ul>
       </div>

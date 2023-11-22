@@ -119,6 +119,7 @@
         padding: 5px;
         margin-inline: auto;
         width: 90%;
+        height: fit-content;
     }
 
     .project-slide2>img {

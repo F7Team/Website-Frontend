@@ -8,7 +8,7 @@ function Works({ projects }) {
 
 
     return (
-        <div className='works-section'>
+        <div id="works" className='works-section'>
             <ProjectSlider2 projects={projects} />
         </div>
     )
