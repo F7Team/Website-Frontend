@@ -29,7 +29,7 @@ const Home = ({
       .catch(error => {
         console.error('Fetch error:', error);
       });
-  }, []); 
+  }, []);
 
 
   useEffect(() => {
@@ -42,12 +42,15 @@ const Home = ({
         return response.json();
       })
       .then(data => {
-        setMembers(data);
+        // Sort the data array by id in ascending order
+        const sortedData = data.slice().sort((a, b) => a.id - b.id);
+        setMembers(sortedData);
+        // Find and set the selected person
       })
       .catch(error => {
         console.error('Fetch error:', error);
       });
-  }, []); 
+  }, []);
 
 
   return (

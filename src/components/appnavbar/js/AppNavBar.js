@@ -2,11 +2,12 @@ import React, { useState, useLayoutEffect } from 'react';
 import logo from '../logo-image.svg';
 import '../css/AppNavBar.css';
 import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ScrollHandler from '../js/ScrollHandler'
 
 const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
   
-  
+  const navigate = useNavigate();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -34,6 +35,9 @@ const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
   }, [prevScrollPos, visible]);
 
 
+  function reloadPage(){
+    navigate('/');
+  }
 
   const scrollToSection = (id) => {
     scrollTo(id);
@@ -44,7 +48,7 @@ const AppNavBar = ({menuOpen, toggleMenu, scrollTo}) => {
     <nav className={`navbar ${visible ? '' : 'hidden'}`}>
       <div className="container">
         <div className="logo">
-          <img className='logo-image' src={logo} alt="Logo" />
+          <img className='logo-image' src={logo} alt="Logo" onClick={reloadPage}/>
         </div>
         <div className="menu-button" onClick={toggleMenu}>
           <div className={`menu-icon ${menuOpen ? 'open' : ''}`}>

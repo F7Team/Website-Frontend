@@ -111,13 +111,22 @@ function BioSlider({ page, persons }) {
 function ProfilePerson({ person, darkTheme }) {
     const navigate = useNavigate();
 
+    const onReadBioClicked= (id) => {
+        navigate(`/bio/${id}`)
+        refreshPage();
+    }
+
+    function refreshPage() {
+        window.location.reload();
+      }
+
     return (
         <div className={`person-container ${darkTheme ? 'dark-theme' : ''}`}>
             <Avatar image={person.photo} darkTheme={darkTheme} />
             <p className='person-name'>{person.name}</p>
             <p className='person-role'>{person.position}</p>
             <div className='person-read-more'>
-                <p onClick={() => navigate(`/bio/${person.id}`)}>Read Bio</p>
+                <p onClick={() => onReadBioClicked(person.id)}>Read Bio</p>
                 <div>
                     <img src={readBioButton} alt={`${person.name}`} />
                 </div>
