@@ -16,8 +16,7 @@ import Avatar from '../../pages/home/about/Avatar';
 
 
 
-
-function BioSlider({ page, persons, person }) {
+function BioSlider({ page, persons }) {
 
     const darkTheme = !(page === 'bio')
     const headerText = (page === 'bio') ? 'Other Creatives': 'Meet Our House of Creatives'
@@ -105,7 +104,6 @@ function BioSlider({ page, persons, person }) {
                 </div>
             </div>
         </div>
-
     );
 }
 
@@ -113,15 +111,24 @@ function BioSlider({ page, persons, person }) {
 function ProfilePerson({ person, darkTheme }) {
     const navigate = useNavigate();
 
+    const onReadBioClicked= (id) => {
+        navigate(`/bio/${id}`)
+        refreshPage();
+    }
+
+    function refreshPage() {
+        window.location.reload();
+      }
+
     return (
         <div className={`person-container ${darkTheme ? 'dark-theme' : ''}`}>
             <Avatar image={person.photo} darkTheme={darkTheme} />
             <p className='person-name'>{person.name}</p>
             <p className='person-role'>{person.position}</p>
             <div className='person-read-more'>
-                <p>Read Bio</p>
+                <p onClick={() => onReadBioClicked(person.id)}>Read Bio</p>
                 <div>
-                    <img src={readBioButton} alt={`${person.name}`} onClick={() => navigate(`/bio/${person.id}`)}/>
+                    <img src={readBioButton} alt={`${person.name}`} />
                 </div>
             </div> 
         </div>

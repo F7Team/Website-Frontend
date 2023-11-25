@@ -17,7 +17,6 @@ import ProjectSlider2 from '../../components/slider/ProjectSlider2';
 function ProjectsPage() {
 
     const { projectId } = useParams();
-
     const [projects, setProjects] = useState([]);
 
   useEffect(() => {

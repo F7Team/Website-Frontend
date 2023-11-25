@@ -12,7 +12,9 @@ const About = ({persons}) => {
             <FirstAbout />
             <SecondAbout />
             <ThirdAbout />
+            <div id='teams'>
             <BioSlider page={'home'} persons={persons}/>
+            </div> 
         </>
     );
 };
