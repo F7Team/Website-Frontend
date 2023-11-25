@@ -67,8 +67,6 @@ function App() {
             />} />
           <Route path="/bio/:personId" element={
             <BioPage/>
-
-
           } />
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
         </Routes>

@@ -8,6 +8,7 @@ function BioPage() {
 
     const { personId } = useParams();
     const [members, setMembers] = useState([]);
+    const [selectedPerson, setSelectedPerson] = useState(null);
 
 
     useEffect(() => {
@@ -17,22 +18,27 @@ function BioPage() {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                console.log(response)
+                console.log(response);
                 return response.json();
             })
             .then(data => {
-                setMembers(data);
+                // Sort the data array by id in ascending order
+                const sortedData = data.slice().sort((a, b) => a.id - b.id);
+                setMembers(sortedData);
+                // Find and set the selected person
+                const person = sortedData.find(member => member.id === Number(personId));
+                setSelectedPerson(person);
             })
             .catch(error => {
                 console.error('Fetch error:', error);
             });
-    }, []);
+    }, [personId]);
+    
 
-    const person = members.find(member => member.id === Number(personId));
-    console.log(person)
+
     return (
         <div className='Bio'>
-            <BioAboutSection person={person} />
+            <BioAboutSection person={selectedPerson} />
             <BioSlider page={'bio'} persons={members} />
         </div>
     );
