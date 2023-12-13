@@ -10,6 +10,8 @@ function BioPage() {
     const [members, setMembers] = useState([]);
     const [selectedPerson, setSelectedPerson] = useState(null);
 
+    const notSelected = (value) => value !== selectedPerson;
+    let newMembers = members.filter(notSelected);
 
     useEffect(() => {
         const apiUrl = 'https://f7team.vercel.app/api/members/';
@@ -39,7 +41,7 @@ function BioPage() {
     return (
         <div className='Bio'>
             <BioAboutSection person={selectedPerson} />
-            <BioSlider page={'bio'} persons={members} />
+            <BioSlider page={'bio'} persons={newMembers} />
         </div>
     );
 }
