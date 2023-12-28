@@ -14,15 +14,7 @@ const FirstAbout = () => {
                         <h2>About Us</h2>
                     </div>
                     <div className="about-text">
-                        <p> At F7, expertise meets creativity. Our team
-                            consists of skilled professionals with
-                            diverse knowledge across domains,
-                            ensuring that every solution we deliver is
-                            backed by technical excellence and innovative
-                            thinking. We’re a team of strategists,
-                            technologists and artists that work together
-                            to understand opportunities, create solutions
-                            and transform businesses. </p>
+                        <p> F7 is a team of creative experts who combine technical excellence and innovative thinking to deliver solutions that transform businesses. We have diverse domain knowledge and strategic vision to understand opportunities and create solutions.</p>
                     </div>
                 </div>
             </div>
