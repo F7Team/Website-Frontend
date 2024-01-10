@@ -2,7 +2,8 @@
 
 /* Common styles for all screen sizes */
 .navbar {
-  background-color: #4f4f4f;
+  /* background-color: #4f4f4f; */
+  background-color: #101010;
   color: #fff;
   padding: 10px;
   position: sticky;
@@ -22,7 +23,6 @@
   opacity: 1;
 }
 
-
 .navbar .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -39,7 +39,6 @@
   transition: all 0.5s ease-in;
   /* border-radius: 50%; */
 }
-
 
 .menu-button {
   display: none;
@@ -89,7 +88,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #F4F4F4;
+  color: #f4f4f4;
   font-family: Georgia;
   font-size: 18px;
   font-style: normal;
@@ -103,9 +102,8 @@
 }
 
 .nav-links a.btn {
-  background-color: #2F80ED !important;
+  background-color: #2f80ed !important;
 }
-
 
 /* .nav-links a.active{} */
 .nav-links a:hover {
@@ -114,14 +112,12 @@
 }
 
 .nav-links a.btn:hover {
-  background-color: #2F80ED !important;
+  background-color: #2f80ed !important;
   font-size: 18px;
 }
 
-
 /* Small screens (576px to 767px) */
 @media (max-width: 767px) {
-
   .logo-image {
     margin-left: -20px;
   }
@@ -148,7 +144,8 @@
     top: 70px;
     right: -100%;
     gap: 10px;
-    background-color: #4f4f4f;
+    /* background-color: #4f4f4f; */
+    background-color: #101010;
     overflow: hidden;
     transition: all 1s ease-in-out;
     height: 100vh;
@@ -172,7 +169,7 @@
 
   .nav-links a:hover,
   .nav-links a:active {
-    background-color: #2F80ED;
+    background-color: #2f80ed;
   }
 
   .nav-links a.btn {
@@ -194,10 +191,13 @@
 }
 
 /* Medium screens (768px to 991px) */
-@media (min-width: 768px) and (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 991px) {
+}
 
 /* Large screens (992px to 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
 
 /* Extra Large screens (1200px and above) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
